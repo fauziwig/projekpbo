@@ -1,2 +1,2 @@
 # projekpbo
-Repo projek matkul pbo 
+Repository Projek Program Bank Sederhana Dengan Java 
