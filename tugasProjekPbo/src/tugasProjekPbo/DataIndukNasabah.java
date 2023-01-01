@@ -1,78 +1,71 @@
 package tugasProjekPbo;
 
-import java.util.*;
+import java.util.Scanner;
+import java.util.Random;
+
 
 public class DataIndukNasabah {
+ 
+    private String nama, alamat, jk, noRek, jenistab;
+    private final Random random = new Random();
 
-	private String nama, alamat, noRek, jenisTab, jenisKel;
-	private final Random acak = new Random();
-	
-	Scanner input = new Scanner(System.in);
-	
-	public String getNama() {
-		return nama;
-	}
+    Scanner input = new Scanner(System.in);
+    
+    public  String setNorek(	int length) {
+        String code = "";
+        for (int i = 0; i < length; i++) {
+            code += (char) (random.nextInt(10) + '0');
+        }
+        return code;
+    }
+ 
+    public String getNama(){
+        return nama;
+    }
+    public String getAlamat(){
+        return alamat;
+    }
+    public String getJk(){
+        return jk;
+    }
+    public String getNorek(){
+        return noRek;
+    }
+    public void inputDataNasabah(){
+    	
+    	
+    	System.out.println("Pendataan Nasabah Baru ");
+    	System.out.println();
+    	System.out.println("Masukkan Nama : ");
+    	this.nama = input.nextLine();
+    	
+    	System.out.println("Masukkan Alamat : ");
+    	this.alamat = input.nextLine();
+    	
+    	System.out.println("Masukkan Jenis Kelamin : ");
+    	this.jk = input.nextLine();
+    	
+    	this.noRek=setNorek(10);
+    	
+    	System.out.println();
+    	System.out.println(" Data baru sudah di input... ");
 
-	public void setNama(String nama) {
-		this.nama = nama;
-	}
+    }
+    public void inputJenis(){
+    }
+    public void cetak_nasabah(){
+    }
+    public void cetak_saldo(){
+    }
+    public void penyetoran(){
+    }
+    public void penarikan(){
+    }
+    public void cetak_penarikan(){
+            }
+    public String getJenistab(){
+        return jenistab;
+    }
 
-	public String getAlamat() {
-		return alamat;
-	}
-
-	public void setAlamat(String alamat) {
-		this.alamat = alamat;
-	}
-
-	public String getNoRek() {
-		return noRek;
-	}
-	
-	public String getJenisKel() {
-		return jenisKel;
-	}
-
-	public void setJenisKel(String jenisKel) {
-		this.jenisKel = jenisKel;
-	}
-
-	/* MENCETAK NO REK SECARA ACAK SEBANYAK 10 BIL*/
-	public String setNoRek(int panjang) {
-		String kode = " ";
-		
-		for(int i=0; i<panjang; i++)
-		{
-			kode += (char)(acak.nextInt(10)+'0');
-		}
-		
-		return kode;
-	}
-
-	public String getJenisTab() {
-		return jenisTab;
-	}
-
-	public void setJenisTab(String jenisTab) {
-		this.jenisTab = jenisTab;
-	}
-	
-	public void inputDataNasabah() {
-		System.out.println("--- TAMBAH DATA NASABAH BARU ---");
-		System.out.println();
-		System.out.println(" Masukkan nama : ");
-		this.nama = input.nextLine();
-		
-		System.out.println(" Masukkan alamat : ");
-		this.alamat = input.nextLine();
-		
-		System.out.println(" Masukkan jenis kelamin : ");
-		this.jenisKel = input.nextLine();
-		
-		this.noRek = setNoRek(10);
-		
-		System.out.println();
-		System.out.println(" Data baru telah di input ");
-	}
-	
+ 
 }
