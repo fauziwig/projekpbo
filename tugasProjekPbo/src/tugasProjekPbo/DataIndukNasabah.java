@@ -1,17 +1,15 @@
 package tugasProjekPbo;
 
-import java.util.Scanner;
 import java.util.Random;
+import javax.swing.JOptionPane;
 
 
 public class DataIndukNasabah {
  
-    private String nama, alamat, jk, noRek, jenistab;
-    private final Random random = new Random();
+    private String nama, alamat, jk, noRek,jenistab;
+    private final  Random random = new Random();
 
-    Scanner input = new Scanner(System.in);
-    
-    public  String setNorek(	int length) {
+    public  String setNorek(int length) {
         String code = "";
         for (int i = 0; i < length; i++) {
             code += (char) (random.nextInt(10) + '0');
@@ -31,25 +29,14 @@ public class DataIndukNasabah {
     public String getNorek(){
         return noRek;
     }
-    public void inputDataNasabah(){
-    	
-    	
-    	System.out.println("Pendataan Nasabah Baru ");
-    	System.out.println();
-    	System.out.println("Masukkan Nama : ");
-    	this.nama = input.nextLine();
-    	
-    	System.out.println("Masukkan Alamat : ");
-    	this.alamat = input.nextLine();
-    	
-    	System.out.println("Masukkan Jenis Kelamin : ");
-    	this.jk = input.nextLine();
-    	
-    	this.noRek=setNorek(10);
-    	
-    	System.out.println();
-    	System.out.println(" Data baru sudah di input... ");
-
+    public void indftNasabah(){
+        JOptionPane.showMessageDialog(null, "PENDATAAN NASABAH BARU","PENDATAAN",
+                JOptionPane.INFORMATION_MESSAGE);
+        this.nama=JOptionPane.showInputDialog("Masukkan Nama  : ");
+        this.alamat=JOptionPane.showInputDialog("Masukkan Alamat  : ");
+        this.jk=JOptionPane.showInputDialog("Masukkan Jenis Kelamin  : ");
+        this.noRek=setNorek(8);
+        JOptionPane.showMessageDialog(null, "Data baru sudah di input");
     }
     public void inputJenis(){
     }
