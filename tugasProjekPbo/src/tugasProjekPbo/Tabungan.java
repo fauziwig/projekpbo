@@ -1,21 +1,20 @@
 package tugasProjekPbo;
 
-import java.util.Scanner;
+import javax.swing.JOptionPane;
+
 
 public class Tabungan extends DataIndukNasabah{
-    private double s_awal,s_akhir,setor, tarik;
+    private int  s_awal,s_akhir,setor, tarik;
     private String jenistab,jentab;
     
-    Scanner input = new Scanner(System.in);
-    
-    public double getSaldoAwal(){
+    public int getSaldoAwal(){
         return s_awal;
     }
-    public double getSaldo(){
+    public int getSaldo(){
         s_akhir=getSaldoAwal()+setor;
       return s_akhir;
     }
-    public double getSetor(){
+    public int getSetor(){
         return setor;
     }
     @Override
@@ -33,19 +32,15 @@ public class Tabungan extends DataIndukNasabah{
     
     @Override
     public void inputJenis(){
-    	System.out.println(" Pilih Jenis Tabungan : \n1. Simpedes\n2. Simpeda ");
-    	this.jentab = input.nextLine();
-    	
-    	
+        this.jentab=JOptionPane.showInputDialog("Pilih Jenis Tabungan\n"
+                + "1. Simpedes\n2. Simpeda");
+         
 }
     
     @Override
     public void penyetoran(){
-    	System.out.println("Masukkan jumlah setoran : ");
-    	String setor_string = input.nextLine();
-    	
-        
-    	this.setor=Integer.parseInt(setor_string);
+        String setor_string=JOptionPane.showInputDialog("masukkan jumlah setoran");
+        this.setor=Integer.parseInt(setor_string);
         this.s_awal=s_awal+setor;
         
     }
